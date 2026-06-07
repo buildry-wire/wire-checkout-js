@@ -1,0 +1,36 @@
+{
+  "name": "@buildry-wire/checkout",
+  "version": "1.0.0",
+  "description": "Client-side drop-in for presenting a Wire hosted checkout session in the browser",
+  "license": "MIT",
+  "author": "Buildry",
+  "homepage": "https://wire.mn",
+  "repository": { "type": "git", "url": "https://github.com/buildry-wire/wire-checkout-js.git" },
+  "publishConfig": { "access": "public", "provenance": true },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "sideEffects": false,
+  "files": ["dist"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "keywords": ["wire", "checkout", "payments", "hosted-checkout", "browser"],
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsup": "^8",
+    "typescript": "^5",
+    "vitest": "^2"
+  }
+}
