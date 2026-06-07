@@ -28,6 +28,12 @@ jobs:
       - run: npm run build
       - name: Publish to npm (OIDC + provenance)
         run: npm publish
+        env:
+          # TEMPORARY bootstrap: npm has no pending trusted publisher for a
+          # never-published name, so the FIRST publish uses a granular token.
+          # Remove this env block + the NPM_TOKEN secret after 1.0.0 is live and
+          # configure the package trusted publisher (see RELEASING.md).
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: GitHub Release
         uses: softprops/action-gh-release@v2
         with:
