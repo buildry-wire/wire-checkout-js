@@ -81,10 +81,9 @@ You can also pass an explicit token instead of a url:
 await checkout.open({ token: "cs_test_…", baseURL: "https://pay.wire.mn" });
 ```
 
-## Test operator
+## Operators
 
-In sandbox, sessions are created against the `["sandbox"]` test operator. In live mode the buyer
-sees the operators enabled on your account.
+The buyer sees the operators enabled on your project.
 
 ## Errors
 
